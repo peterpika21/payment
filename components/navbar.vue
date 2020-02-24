@@ -1,5 +1,6 @@
 <template lang="pug">
-  div
+  div.p-4
+    svg-icon(icon-class="icon_add")
 </template>
 
 <script>
