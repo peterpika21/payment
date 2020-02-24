@@ -1,5 +1,5 @@
 // layout
-$container-width: 1200px;
+$container-width: 890px;
 
 // RWD 斷點
 $RWD: (
@@ -45,6 +45,7 @@ $weights: (
 
 // 間距, 使用 (rwd尺寸-)m-方向-key值 or (rwd尺寸-)p-方向-key值
 $spaces: (
+  '0': 0,
   '1': 0.25rem,
   '2': 0.5rem,
   '3': 0.75rem,
