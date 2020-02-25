@@ -10,8 +10,8 @@
 
         // 內容
         div.p-4.d-flex.align-items-center.justify-content-center(v-else,style="width:260px")
-          svg-icon.mr-2(:icon-class="item.icon" width="24" height="24")
-          span(:class="{'tx-primary':activeTag > item.active}") {{item.title}}
+          svg-icon.mr-2(:icon-class="$store.state.activeTag > item.active?'icon_step_done':item.icon" width="24" height="24")
+          span(:class="{'tx-primary':$store.state.activeTag > item.active}") {{item.title}}
 
     div.v-Info(v-if="$store.state.isBanner")
       div.py-9.h-container.mx-auto.tx-white.d-flex.justify-content-between
@@ -33,7 +33,6 @@
 export default {
   data() {
     return {
-      activeTag: 1,
       list: [
         {
           title: '確認購物車',

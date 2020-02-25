@@ -2,13 +2,13 @@
   div
     // 選單
     ul.p-9.h-container.mx-auto.d-flex.flex-wrap.justify-content-between
-      li.v-payType(v-for="item in payType",:class="{'cursor-not-allowed':(item.icon === 'unionpay')}",@click="clickType(item)")
+      li.v-payType(v-for="item in payType",:class="{'cursor-not-allowed':(item.icon !== 'icon_store')}",@click="clickType(item)")
         svg-icon.ml-8.mr-4(:icon-class="active == item.type?'icon_confirm':'icon_confirm_normal'" width="24" height="24")
         svg-icon.mr-5(v-if="item.icon !== 'unionpay'",:icon-class="item.icon" width="70" height="50")
         img.mr-5(v-else,src="~assets/icons/unionpay.png",style="width:70px;height:50px")
         div.width-50
-          p.mb-2(:class="{'tx-gray-200':(item.icon === 'unionpay'),'tx-gray-400':(item.icon !== 'unionpay')}") {{item.title}}
-          p(:class="{'tx-gray-200':(item.icon === 'unionpay'),'tx-gray-300':(item.icon !== 'unionpay')}") {{item.content}}
+          p.mb-2(:class="{'tx-gray-200':(item.icon !== 'icon_store'),'tx-gray-400':(item.icon === 'icon_store')}") {{item.title}}
+          p(:class="{'tx-gray-200':(item.icon !== 'icon_store'),'tx-gray-300':(item.icon === 'icon_store')}") {{item.content}}
 
     // 說明
     div.px-12.h-container.mx-auto.relative
@@ -56,6 +56,7 @@ export default {
     }
   },
   created() {
+    this.$store.commit('SET_TAG', 1)
     this.$store.commit('SET_BANNER', true)
   },
   methods: {
