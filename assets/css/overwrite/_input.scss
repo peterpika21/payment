@@ -1,0 +1,16 @@
+input {
+  padding: 8px 16px;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  outline: none;
+}
+
+textarea{
+  &::-webkit-input-placeholder{
+    color: #909399;
+  }
+}
+
+@include placeholder{
+  color: #909399;
+}

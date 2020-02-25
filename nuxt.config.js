@@ -72,6 +72,14 @@ module.exports = {
     {
       src: '~/plugins/svg-icon.js',
       ssr: false
+    },
+    {
+      src: '~/plugins/vInput.js',
+      ssr: false
+    },
+    {
+      src: '~/plugins/vee-validate.js',
+      ssr: false
     }
   ],
 
@@ -79,6 +87,7 @@ module.exports = {
   // this is necessary
   build: {
     extractCSS: true,
+    transpile: ['vee-validate/dist/rules'],
     /*
      ** 您可以在这里扩展webpack配置
      */

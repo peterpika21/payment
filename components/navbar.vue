@@ -13,7 +13,7 @@
           svg-icon.mr-2(:icon-class="item.icon" width="24" height="24")
           span(:class="{'tx-primary':activeTag > item.active}") {{item.title}}
 
-    div.v-Info
+    div.v-Info(v-if="$store.state.isBanner")
       div.py-9.h-container.mx-auto.tx-white.d-flex.justify-content-between
         div.d-flex
           div.v-Info__ltBd

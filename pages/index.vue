@@ -34,7 +34,7 @@
 
     div.px-12.h-container.my-3.mx-auto.d-flex.justify-content-end
       button.mr-5.bg-white.border-gray-200.round-m.py-4.px-12.border-solid(style="outline: none;") 上一步
-      button.bg-primary.tx-white.border-0.round-m.py-4.px-12(style="outline: none;") 下一步
+      button.bg-primary.tx-white.border-0.round-m.py-4.px-12.cursor-pointer(@click="submit()",style="outline: none;") 下一步
 </template>
 
 <script>
@@ -55,11 +55,17 @@ export default {
       ]
     }
   },
+  created() {
+    this.$store.commit('SET_BANNER', true)
+  },
   methods: {
     clickType(item) {
       if (item.type) {
         this.active = item.type
       }
+    },
+    submit() {
+      this.$router.push({ path: '/pay', query: { type: this.active } })
     }
   }
 }

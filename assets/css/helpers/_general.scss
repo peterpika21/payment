@@ -6,4 +6,8 @@
   &-vertical-center{
     @include vertical-center();
   }
+
+  &-titleWidth {
+    width: 75px;
+  }
 }
